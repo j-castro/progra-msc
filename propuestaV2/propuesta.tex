@@ -1,0 +1,73 @@
+\documentclass[spanish]{article}
+\usepackage[utf8]{inputenc}                   % Para escribir tildes y eñes
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{listings}
+%\usepackage{hyperref}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage{graphicx}     % Para insertar gráficas
+\hyphenation{}
+\usepackage[vmargin=4cm,			%%margins
+	    tmargin=3cm,
+	    hmargin=2cm,
+	    letterpaper]{geometry}
+
+\newcommand{\entitle}[1]{
+  \vspace{0.3cm}%
+  \noindent%
+  \textbf{#1}%
+  \vspace{0.2cm}%
+  \hrule\vspace*{0.5mm}%
+  \noindent%
+  \rule{\linewidth}{0.5mm}%
+  \vspace{0.5cm}%
+}
+
+\begin{document}
+\fancyhead[L]{\includegraphics[scale=0.18]{ucr}}
+\fancyhead[C]{UNIVERSIDAD DE COSTA RICA\\ESCUELA DE INGENIERÍA ELÉCTRICA\\PROGRAMACIÓN DE COMPUTADORES\\Segmentación y Rastreo de Células en la vía NFKB: Evaluación de resultados\\GEYKE93
+}
+\fancyhead[R]{\includegraphics[scale=0.42]{msceie}}
+\pagestyle{fancy}
+\setlength{\headheight}{60pt}
+
+\entitle{
+\begin{center}
+SAÚL CALDERÓN   A61059 \\
+MARCO VILLALTA  994373\\
+JORGE CASTRO  A71602\\
+\end{center}
+}
+
+\section{Justificación}
+
+En \cite{Calderon2014} se desarrolló un marco de trabajo para la segmentación y seguimiento de celulas en la via NFKB, con tinción en la proteína p65. La posición de tal proteína oscila a lo largo del tiempo de posición entre el núcleo y el citoplasma de las células. Esto ocasiona cambios aparentes del objeto de interés (célula), lo que imposibilita el uso de las técnicas típicas de seguimiento de objetos. El desempeño del marco de trabajo desarrollado fue corroborado de manera cualitativa, quedando pendiente la verificación cuantitativa del algoritmo. Para este proyecto se propone investigar las distintas métricas de rendimiento en algoritmos de seguimiento. Con base a tal investigación se propondrá la métrica a utilizar, para posteriormente implementarla y realizar la evaluación del rendimiento del marco de trabajo propuesto.
+\section{Metodología}
+Se estudiaran las métricas del desempeño de algoritmos de seguimiento para posteriormente elegir e implementar la técnica idónea según las características del problema resuelto en \cite{Calderon2014}. Las métricas a analizar estan basadas en los datos obtenidos en un seguimiento de los objetos de interés manual o "ground of truth". La herramienta para generar tales datos a utilizar sera "sensarea". Tal herramienta permite marcar las regiones de interés cuadro por cuadro, y generar un archivo de formato xml a partir de tales demarcaciones. Se exploraran entonces los formatos más utilizados por evaluadores de rendimiento de acuerdo a la métrica previamente escogida. Finalmente se implementará la generación automatica de los datos con el formato y la métrica escogida para posteriormente incorporar los resultados en \cite{Calderon2014}.
+
+\section{Objetivos}
+
+\subsection{Objetivo General}
+Investigar sobre las métricas de rendimiento en algoritmos de seguimiento para escoger la métrica idonea según las características del problema definido en \cite{Calderon2014}, para corroborar el rendimiento del marco de trabajo propuesto en \cite{Calderon2014} y si es el caso implementar modificaciones a tal marco de trabajo. 
+
+\subsection{Objetivos Específicos}
+\begin{itemize}
+\item Investigar sobre las distintas métricas del rendimiento en algoritmos de seguimiento y escoger la o las técnicas idóneas según el problema definido en \cite{Calderon2014}.
+\item Implementar tal metrica en algun formato como .xml y su generación automática a partir de los resultados del algoritmo de seguimiento implementado en \cite{Calderon2014}.
+\item Generar y analizar los datos  del rendimiento en el algoritmo de seguimiento propuesto en \cite{Calderon2014} y proponer cambios al mismo si fuese el caso.
+\end{itemize}
+
+
+\section{Referencias}
+\begin{thebibliography}{9}
+
+
+\bibitem{Calderon2014} S. Calderón, J. Castro, and A. Sáenz \emph{Automatic cell tracking and measurement of the NF-kB-GFP nuclear and cytoplasmic concentrations using time-lapse fluorescence microscopy videos without nuclear staining}, preprint (2014).
+
+
+
+\end{thebibliography}
+
+\end{document}
+
+
